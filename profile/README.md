@@ -8,8 +8,6 @@ Built on Solana, MoonCreditFi enables entrepreneurs and small businesses to pres
 
 By combining blockchain transparency, business verification and reputation intelligence, MoonCreditFi aims to make business financing more accessible, accountable and transparent.
 
-<img width="1290" height="860" alt="1000659190" src="https://github.com/user-attachments/assets/2dec529a-c33c-43ee-a68d-b368436364d5" />
-
 ---
 
 The Problem
