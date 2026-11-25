@@ -1,184 +1,447 @@
-MoonCreditFi
+# MoonCreditFi
 
-Trust Before Capital.
+### Trust-Based Business Funding on Solana
 
-MoonCreditFi is a reputation-driven decentralized finance platform connecting entrepreneurs and investors through Mudarabah-based business financing.
+**Capital should follow credible opportunities, not just access to traditional financing.**
 
-Built on Solana, MoonCreditFi enables entrepreneurs and small businesses to present funding opportunities while allowing multiple investors to contribute capital through dedicated business funding pools.
+MoonCreditFi is a Solana-based decentralized business funding application built around the principles of **Mudarabah** — a profit-sharing partnership between capital providers and entrepreneurs.
 
-By combining blockchain transparency, business verification and reputation intelligence, MoonCreditFi aims to make business financing more accessible, accountable and transparent.
+It connects entrepreneurs seeking business capital with investors willing to fund promising opportunities under predefined profit-sharing arrangements.
+
+Rather than treating funding as a simple transfer of money, MoonCreditFi creates an on-chain framework for proposals, funding pools, capital contributions, disbursement, settlement, and investor distributions.
+
+**Built on Solana · Anchor Framework · React · TanStack Start · Supabase**
 
 ---
 
-The Problem
+## The Problem
 
-Many entrepreneurs and small businesses struggle to access funding because they lack conventional collateral, established credit histories or connections to traditional financial institutions.
+Access to business capital remains one of the major barriers facing entrepreneurs, particularly small businesses and early-stage ventures.
 
-At the same time, investors face challenges identifying credible businesses, evaluating risks and monitoring how their capital is used.
+Traditional funding channels can create several challenges:
 
-Traditional financing systems often leave a gap between entrepreneurs who need capital and investors who are willing to provide it.
+- **Limited access to capital:** Entrepreneurs with viable ideas may struggle to obtain financing because they lack collateral, credit history, or access to established financial institutions.
+- **High barriers to participation:** Potential investors may not have accessible ways to participate in structured business funding opportunities.
+- **Limited transparency:** Funding arrangements, contributions, and distributions can be difficult to track across fragmented processes.
+- **Misaligned funding structures:** Conventional debt financing requires repayment regardless of business performance, which may not suit every entrepreneur or investor.
+- **Trust and accountability gaps:** Participants need clearer records of funding commitments, capital movement, and settlement outcomes.
 
-Our Solution
+The problem is not simply a shortage of capital. It is the lack of accessible, transparent, and structured ways to connect capital with business opportunities.
 
-MoonCreditFi introduces an alternative financing ecosystem where business credibility, reputation and transparent investment agreements play an important role in accessing capital.
+## Our Solution
 
-Entrepreneurs can:
+MoonCreditFi provides an on-chain framework for Mudarabah-style business funding.
 
-- Create and manage business profiles.
-- Submit funding proposals.
-- Provide business information and verification documents.
-- Establish dedicated Mudarabah funding pools.
-- Track contributions and funding progress.
+Entrepreneurs submit funding proposals specifying their business objectives, funding targets, and proposed profit-sharing arrangements.
 
-Investors can:
+After platform-authority approval, an entrepreneur can create a funding pool. Investors contribute USDC, and the smart contract records contributions and manages the pool's funding lifecycle.
 
-- Discover business funding opportunities.
-- Review business profiles and funding proposals.
-- Evaluate available verification and reputation signals.
-- Contribute USDC to dedicated funding pools.
-- Track investment positions and settlement distributions.
+When the business reaches settlement, the approved returns are distributed according to the agreed profit-sharing structure and the protocol's contract rules.
 
-Each approved business operates through its own funding pool, allowing multiple investors to participate while maintaining individually tracked contributions.
+### How MoonCreditFi works
 
-How It Works
+1. **Propose:** An entrepreneur submits a business funding proposal.
+2. **Review:** The platform authority reviews and approves or rejects the proposal.
+3. **Create a pool:** An approved entrepreneur creates a funding pool.
+4. **Contribute:** Investors contribute USDC to the pool.
+5. **Activate and disburse:** Once the funding target is reached, the entrepreneur activates the pool and authorized capital is disbursed.
+6. **Settle:** The entrepreneur submits the returned capital and settlement information for platform-authority approval.
+7. **Distribute:** Investors claim their calculated distributions, and the entrepreneur claims their eligible profit share.
 
-1. Connect Wallet: Users authenticate through Sign-In with Solana using a compatible wallet.
-2. Create Profile: Users can participate as entrepreneurs, investors or both.
-3. Register Business: Entrepreneurs create business profiles and submit relevant verification documents.
-4. Submit Proposal: Entrepreneurs provide funding requirements, business plans and proposed profit-sharing terms.
-5. Review and Approval: Funding proposals undergo the platform's review process.
-6. Create Funding Pool: An approved business receives a dedicated on-chain Mudarabah pool.
-7. Investor Contributions: Multiple investors contribute USDC toward the funding target.
-8. Capital Disbursement: Once funding conditions are met, capital is released according to the agreed terms.
-9. Business Settlement: The entrepreneur reports the business outcome and submits the agreed settlement amount for review.
-10. Profit or Loss Distribution: Approved settlement proceeds are allocated according to the agreed Mudarabah terms and investor contributions.
+The smart contract records the relevant operations on Solana, making transaction activity independently inspectable.
 
-Mudarabah Financing Model
+## Why Mudarabah?
 
-MoonCreditFi adopts the Mudarabah partnership structure, an Islamic finance model based on capital investment and business management.
+Mudarabah is a partnership structure in which:
 
-- Investors (Rabb-ul-Maal): Provide the investment capital.
-- Entrepreneurs (Mudarib): Manage the business and contribute their expertise and operational effort.
-- Profit Sharing: Profits are distributed according to a mutually agreed ratio established before investment.
-- Business Losses: Genuine financial losses are generally borne by the capital providers, while the entrepreneur loses their effort and expected profit, except where negligence, misconduct, fraud or breach of agreement is established.
+- The investor provides capital.
+- The entrepreneur provides business management and effort.
+- Profits are shared according to a predefined agreement.
+- Financial losses are generally borne by the capital provider, subject to the applicable contractual and Sharia principles, including exceptions involving negligence, misconduct, or breach.
 
-MoonCreditFi aims to support transparent financing agreements that distinguish genuine business risk from misconduct.
+MoonCreditFi uses this structure as the foundation for its funding model.
 
-Core Features
-
-1. Entrepreneur Profiles
-
-Business owners can create profiles, present their ventures, submit funding proposals and manage their funding activities.
-
-2. Investor Dashboard
-
-Investors can explore funding opportunities, review business information, contribute capital and monitor their investment positions.
-
-3. Dedicated Mudarabah Pools
-
-Every approved business has a dedicated funding pool. Multiple investors can contribute to the same pool while their individual positions are tracked on-chain.
-
-4. Business Verification
-
-Entrepreneurs can submit identity and business documentation for review. Verification levels distinguish wallet ownership from verified identity and business status.
-
-5. Reputation and Risk Intelligence
-
-Integration with CredLayer provides additional wallet reputation and risk signals to support investor assessment.
-
-These signals are informational and do not independently establish a person's identity, honesty or ability to repay capital.
-
-6. On-Chain Financial Transparency
-
-Solana smart contracts manage funding contributions, pool states, capital disbursement, settlement approvals and distribution claims.
-
-7. Investment Tracking
-
-Investors can monitor their contributions, pool activity, funding status and settlement records.
-
-Technology Stack
-
-Layer| Technology
-Blockchain| Solana
-Smart Contracts| Rust, Anchor
-Financial Asset| USDC
-Wallet Authentication| Sign-In with Solana
-Frontend| React, TypeScript, Tailwind CSS
-Backend and Database| Supabase
-Document Storage| Supabase Private Storage
-Reputation Intelligence| CredLayer
-Frontend Deployment| Vercel
-
-Architecture
-
-MoonCreditFi separates blockchain financial operations from private business information.
-
-- Solana: Handles funding pools, contributions, financial state transitions and distribution records.
-- Smart Contracts: Enforce the agreed on-chain funding and settlement rules.
-- Supabase: Manages user profiles, business information, verification workflows and application data.
-- Private Storage: Stores sensitive business and identity documents with access controls.
-- CredLayer: Supplies additional wallet reputation and risk intelligence.
-
-Personal information and confidential documents are not stored directly on-chain.
-
-Security and Trust
-
-MoonCreditFi is designed with security and transparency as core principles.
-
-Key considerations include:
-
-- Wallet-based authentication.
-- PDA-controlled funding vaults.
-- Access-controlled smart contract instructions.
-- Validated token transfers.
-- Individual investor contribution tracking.
-- Protection against duplicate claims.
-- Private document storage and controlled access.
-- Transparent on-chain transaction records.
-
-Blockchain records provide transaction transparency, but they cannot independently verify business performance or prevent every form of fraud. Independent reviews, appropriate legal agreements and security audits remain essential.
-
-Target Users
-
-- Small and medium-sized businesses.
-- Early-stage entrepreneurs and startup founders.
-- Individual investors.
-- Angel investors and investment communities.
-- Business accelerators and entrepreneurial support organizations.
-- Participants interested in alternative profit-sharing financing.
-
-Vision
-
-Our vision is to build a financing ecosystem where access to capital is influenced not only by what an entrepreneur owns, but also by the credibility of their business, the quality of their proposal and their demonstrated accountability.
-
-MoonCreditFi aims to make reputation-informed, transparent and accessible business financing available to entrepreneurs across emerging markets and beyond.
-
-Development Status
-
-MoonCreditFi is under development, with Solana as its initial blockchain network.
-
-The initial development priorities are:
-
-- Building the Anchor smart contracts.
-- Implementing Mudarabah funding pool logic.
-- Integrating Devnet USDC.
-- Developing investor and entrepreneur workflows.
-- Implementing business verification.
-- Integrating CredLayer reputation signals.
-- Testing financial operations and smart contract security.
-
-Network: Solana Devnet (initial development)
-
-Status: Development / Testnet preparation
-
-«This project is not currently presented as an audited or production-ready financial protocol. Do not deposit real funds into development contracts.»
-
-Disclaimer
-
-MoonCreditFi does not guarantee investment returns or the recovery of invested capital. Investments involve business and financial risks, including the possibility of losing capital.
-
-Mudarabah arrangements, legal compliance and Sharia compliance require appropriate independent review before real-world deployment.
+**Important:** The current smart contract implements predefined profit-sharing and return calculations. It does not independently verify business performance, determine Sharia compliance, or establish whether a reported loss is legitimate. These require additional governance, evidence, legal review, and operational controls.
 
 ---
 
-MoonCreditFi — Trust Before Capital.
+## Product Architecture
+
+MoonCreditFi is designed around three connected layers: the user application, supporting backend services, and Solana smart contracts.
+
+### System architecture
+
+```mermaid
+flowchart TB
+    subgraph USERS["USER LAYER"]
+        E["Entrepreneur"]
+        I["Investor"]
+        A["Platform Administrator"]
+    end
+
+    subgraph FRONTEND["APPLICATION LAYER"]
+        UI["React + TanStack Start"]
+        WALLET["Phantom / Solflare"]
+        AUTH["Wallet Sign-In"]
+        DASH["Funding Workspace"]
+    end
+
+    subgraph BACKEND["BACKEND SERVICES"]
+        SB["Supabase Auth"]
+        DB["Supabase Database"]
+    end
+
+    subgraph SOLANA["SOLANA DEVNET"]
+        RPC["Solana RPC"]
+        PROGRAM["MoonCreditFi Anchor Program"]
+        CONFIG["Platform Configuration"]
+        PROPOSAL["Business Proposals"]
+        POOL["Mudarabah Pools"]
+        VAULT["USDC Token Vaults"]
+        POSITION["Investor Positions"]
+        SETTLEMENT["Settlement Records"]
+    end
+
+    E --> UI
+    I --> UI
+    A --> UI
+
+    UI --> WALLET
+    UI --> AUTH
+    AUTH --> SB
+    UI --> DASH
+    DASH --> DB
+
+    WALLET --> RPC
+    RPC --> PROGRAM
+
+    PROGRAM --> CONFIG
+    PROGRAM --> PROPOSAL
+    PROGRAM --> POOL
+    PROGRAM --> VAULT
+    PROGRAM --> POSITION
+    PROGRAM --> SETTLEMENT
+```
+
+### Technology stack
+
+| Layer | Technology | Responsibility |
+|---|---|---|
+| Frontend | React 19, TypeScript | User interface |
+| Application framework | TanStack Start, Vite | Application routing and rendering |
+| Styling | Tailwind CSS | Responsive interface |
+| Wallet integration | Solana Wallet Adapter | Phantom and Solflare |
+| Smart contracts | Rust, Anchor 0.30.1 | Funding and settlement logic |
+| Blockchain | Solana Devnet | On-chain state and transactions |
+| Token standard | Classic SPL Token | USDC contributions and distributions |
+| Authentication | Supabase Auth | Wallet-based sign-in |
+| Supporting storage | Supabase | Application-side data |
+
+### Smart contract architecture
+
+The MoonCreditFi Anchor program manages the core funding lifecycle.
+
+```mermaid
+flowchart TD
+    START["Platform Initialization"]
+    REGISTER["Entrepreneur Registration"]
+    PROPOSAL["Submit Funding Proposal"]
+    APPROVE["Platform Authority Approval"]
+    CREATE["Create Mudarabah Pool"]
+    CONTRIBUTE["Investor Contributions"]
+    CHECK{"Funding Target Reached?"}
+    ACTIVATE["Activate Pool"]
+    DISBURSE["Disburse Capital"]
+    SETTLE["Submit Settlement"]
+    REVIEW["Authority Approves Settlement"]
+    CLAIM["Investor Distribution Claims"]
+    PROFIT["Entrepreneur Profit Claim"]
+    CANCEL["Cancel Eligible Pool"]
+    REFUND["Investor Refund Claims"]
+
+    START --> REGISTER
+    REGISTER --> PROPOSAL
+    PROPOSAL --> APPROVE
+    APPROVE --> CREATE
+    CREATE --> CONTRIBUTE
+    CONTRIBUTE --> CHECK
+    CHECK -->|No| CONTRIBUTE
+    CHECK -->|Yes| ACTIVATE
+    ACTIVATE --> DISBURSE
+    DISBURSE --> SETTLE
+    SETTLE --> REVIEW
+    REVIEW --> CLAIM
+    CLAIM --> PROFIT
+
+    CREATE --> CANCEL
+    CONTRIBUTE --> CANCEL
+    CANCEL --> REFUND
+```
+
+---
+
+## Core Features
+
+### 1. Entrepreneur funding proposals
+- Submit business funding proposals.
+- Specify funding targets.
+- Define the entrepreneur's profit-sharing percentage.
+- Track proposal approval status.
+
+### 2. Mudarabah funding pools
+- Create pools from approved proposals.
+- Accept investor contributions in USDC.
+- Enforce funding targets.
+- Track pool status and contributed capital.
+
+### 3. On-chain contribution management
+- Record investor positions.
+- Track individual contributions.
+- Use token accounts and program-controlled vaults.
+- Inspect transactions using Solana Explorer.
+
+### 4. Capital disbursement
+- Activate fully funded pools.
+- Require the entrepreneur and platform authority signatures for disbursement.
+- Transfer pool capital to the entrepreneur.
+
+### 5. Settlement and distribution
+- Submit business settlement returns.
+- Require platform-authority approval.
+- Calculate investor distributions based on contributions and the agreed profit-sharing ratio.
+- Allow eligible entrepreneur profit claims.
+
+### 6. Cancellation and refunds
+- Allow eligible pools to be cancelled before disbursement.
+- Enable investors to claim refunds from cancelled pools.
+
+---
+
+## Current Development Status
+
+<badge color="success">Devnet prototype</badge>
+
+MoonCreditFi has an Anchor-based Solana program and a React/TanStack frontend configured for Devnet.
+
+| Capability | Current status |
+|---|---|
+| Solana wallet sign-in | Implemented |
+| Supabase authentication | Configured |
+| Proposal submission | Implemented |
+| Authority-based proposal approval | Smart contract instruction |
+| Funding pool creation | Implemented |
+| USDC contributions | Implemented |
+| Associated token account creation | Supported during contribution |
+| On-chain pool and proposal reads | Implemented |
+| Capital disbursement | Contract instruction |
+| Settlement approval | Contract instruction |
+| Investor distributions | Contract instruction |
+| Entrepreneur profit claims | Contract instruction |
+| Cancellation and refunds | Contract instructions |
+
+**Important distinction:** Not every contract instruction currently has a corresponding frontend workflow. The current user-facing pool workspace exposes proposal submission, approved-pool creation, and contributions. Further workflow integration and end-to-end testing remain necessary.
+
+---
+
+## Devnet Configuration
+
+| Setting | Value |
+|---|---|
+| Network | Solana Devnet |
+| Program ID | `6LVAYFDRrTHSiHZqMWr4tybZNRi755HsoHgeku985pYx` |
+| USDC mint | `4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU` |
+| Token program | Classic SPL Token Program |
+| Anchor version | 0.30.1 |
+
+Useful links:
+
+- [MoonCreditFi Program on Solana Explorer](https://explorer.solana.com/address/6LVAYFDRrTHSiHZqMWr4tybZNRi755HsoHgeku985pYx?cluster=devnet)
+- [Solana Devnet](https://explorer.solana.com/?cluster=devnet)
+- [Solana Documentation](https://solana.com/docs)
+- [Anchor Documentation](https://www.anchor-lang.com/)
+
+---
+
+## Repository Structure
+
+```text
+mooncreditfi/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── routes/
+│   │   ├── lib/
+│   │   │   ├── platform-capabilities.ts
+│   │   │   └── mooncredit-program.ts
+│   │   └── idl/
+│   │       └── mooncreditfi.json
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── programs/
+│   └── mooncreditfi/
+│       └── src/
+│           └── lib.rs
+│
+├── tests/
+├── Anchor.toml
+├── Cargo.toml
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- Rust and Cargo
+- Solana CLI
+- Anchor CLI 0.30.1
+- Phantom or Solflare wallet configured for Devnet
+- Supabase project configured for wallet authentication
+
+### Frontend installation
+
+```bash
+cd frontend
+npm ci
+```
+
+Create `frontend/.env.local`:
+
+```dotenv
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=your-public-publishable-key
+```
+
+Start the application:
+
+```bash
+npm run dev
+```
+
+Open the funding workspace:
+
+```text
+http://localhost:3000/pools
+```
+
+Use the port printed by Vite if it differs from 3000.
+
+### Frontend verification
+
+```bash
+npm test
+npm run lint
+npm run build
+```
+
+### Smart contract build
+
+From the repository root:
+
+```bash
+anchor build
+```
+
+Run the local test suite:
+
+```bash
+anchor test
+```
+
+For Devnet operations, explicitly specify the cluster:
+
+```bash
+solana config set --url devnet
+solana address
+solana balance
+```
+
+Only deploy after verifying the program ID, deployment keypair, upgrade authority, and intended binary.
+
+---
+
+## Security and Trust Model
+
+MoonCreditFi separates authentication from financial authorization.
+
+- Wallet sign-in proves control of a wallet for an authenticated session.
+- A sign-in signature does not authorize a blockchain transaction.
+- Every financial transaction must be explicitly signed by the connected wallet.
+- Entrepreneur and investor roles are application-level selections, not automatic permissions.
+- Proposal approval is restricted to the platform authority.
+- Program-controlled token vaults manage pool funds.
+
+### Known limitations
+
+MoonCreditFi is experimental development software and has not been independently audited.
+
+Current limitations include:
+
+- No independent verification of business performance or reported settlement returns.
+- No automated identity, fraud, sanctions, or business-document verification.
+- No independent Sharia certification.
+- Single platform-authority governance.
+- Potential rounding dust from integer-based token calculations.
+- No time-based funding expiry or emergency pause.
+- No Token-2022 support.
+- Not every smart contract instruction has a frontend workflow.
+
+These limitations must be addressed before production financial use.
+
+---
+
+## Roadmap
+
+### Phase 1 — Core protocol
+- [x] Anchor program implementation
+- [x] Devnet program configuration
+- [x] Wallet authentication integration
+- [x] Proposal submission
+- [x] Pool creation and contributions
+- [ ] Complete end-to-end funding lifecycle testing
+
+### Phase 2 — Platform expansion
+- [ ] Complete investor and entrepreneur dashboards
+- [ ] Integrate settlement and distribution workflows
+- [ ] Add business documentation and evidence management
+- [ ] Add notifications and transaction history
+- [ ] Improve pool discovery and investment analytics
+
+### Phase 3 — Trust and governance
+- [ ] Independent smart contract security audit
+- [ ] Multi-signature platform governance
+- [ ] Business verification and due diligence
+- [ ] Dispute-resolution framework
+- [ ] Independent Sharia review
+- [ ] Production security and operational review
+
+### Phase 4 — Ecosystem growth
+- [ ] Entrepreneur onboarding
+- [ ] Investor partnerships
+- [ ] Pilot funding programs
+- [ ] Broader Solana ecosystem integrations
+
+---
+
+## Vision
+
+We believe access to capital should not be limited to businesses that already have access to traditional financial institutions.
+
+MoonCreditFi aims to create an accessible funding infrastructure where entrepreneurs can present opportunities, investors can participate in structured partnerships, and funding operations can be transparently tracked on-chain.
+
+**Our goal is to make business funding more accessible, transparent, and aligned with partnership-based financing.**
+
+---
+
+## Disclaimer
+
+MoonCreditFi is currently a Devnet prototype. It is not a production-ready financial service, investment platform, or audited protocol. Do not deposit real funds. Devnet tokens have no real-world monetary value.
+
+Nothing in this repository constitutes investment, legal, financial, or religious advice.
+
+---
+
+**MoonCreditFi — Building a more transparent path from capital to opportunity.**
